@@ -240,13 +240,13 @@ in each type there are different values
 
 
 JS allows you to convert between types
-    * these rules are understandable, but confusing
-    * simply learn them, do not question them (yet). Someone simply wrote JS to be this way
-    * Boolean(x) -> turns x into a boolean
-    * String(x) -> turns x into a string
-    * Number(x) -> turns x into a number
-    * void(x) -> turns x into undefined
-    * (no way to convert to null)
+* these rules are understandable, but confusing
+* simply learn them, do not question them (yet). Someone simply wrote JS to be this way
+* Boolean(x) -> turns x into a boolean
+* String(x) -> turns x into a string
+* Number(x) -> turns x into a number
+* void(x) -> turns x into undefined
+* (no way to convert to null)
 
 
 
