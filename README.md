@@ -22,19 +22,19 @@ Primitives are the types of value that _are_ values, as opposed to reference typ
 ## The Types
 
 there are 5 primitive types
-  * string
-  * number
-  * boolean
-  * undefined
-  * null
-  * (we'll ignore Symbol for now)
+* string
+* number
+* boolean
+* undefined
+* null
+* (we'll ignore Symbol for now)
 
 the typeof operator tells what type a thing is
-  * typeof (anything in quotes) === "string"
-  * typeof (NaN, Infinity, numbers) === "number"
-  * typeof (true or false) === "boolean"
-  * typeof undefined === undefined
-  * typeof null === null
+* typeof (anything in quotes) === "string"
+* typeof (NaN, Infinity, numbers) === "number"
+* typeof (true or false) === "boolean"
+* typeof undefined === undefined
+* typeof null === null
 
 [on pytut](http://www.pythontutor.com/live.html#code=/*%20values%20to%20try%0A%20%20%22%22,%20%22%20%22,%20true,%20false,%20undefined,%20%0A%20%20null,%20NaN,%20Infinity,%200,%201,%20-1,%20%0A%20%20.5,%20-0.0,%201e3,%201e-3,%20999e305,%20999e306,%0A%20%20%7B%7D,%20%5B%5D,%20function%28%29%7B%7D,%20%28%29%3D%3E%7B%7D,%20new%20Number%28%29%0A*/%0Aconst%20a%20%3D%20%3B%0Aconst%20expected%20%3D%20''%3B%0A%0Alet%20actual%20%3D%20%22%22%3B%0Aif%20%28typeof%20a%20%3D%3D%3D%20'string'%29%20%7B%0A%20%20actual%20%3D%20typeof%20a%3B%0A%7D%20else%20if%20%28typeof%20a%20%3D%3D%3D%20'number'%29%20%7B%0A%20%20actual%20%3D%20typeof%20a%3B%0A%7D%20else%20if%20%28typeof%20a%20%3D%3D%3D%20'boolean'%29%20%7B%0A%20%20actual%20%3D%20typeof%20a%3B%0A%7D%20else%20if%20%28typeof%20a%20%3D%3D%3D%20'undefined'%29%20%7B%0A%20%20actual%20%3D%20typeof%20a%3B%0A%7D%20else%20if%20%28typeof%20a%20%3D%3D%3D%20'object'%20%26%26%20a%20%3D%3D%3D%20null%29%20%7B%0A%20%20actual%20%3D%20typeof%20a%3B%0A%7D%20else%20%7B%0A%20%20actual%20%3D%20typeof%20a%20%2B%20%22%3A%20is%20not%20a%20primitive%22%3B%0A%7D%3B%0A%0Aconsole.assert%28expected%20%3D%3D%3D%20type,%20%22typeof%20a%20%3D%3D%3D%20%22%20%2B%20type%29%3B&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)
 ```js
@@ -170,8 +170,8 @@ careful of NaN, it's strange.  The best way to check if something is NaN is to u
 
 
 null vs. undefined  
-    * null is intentional
-    * undefined can happen by accident
+* null is intentional
+* undefined can happen by accident
 
 so use null if you want there to be nothing, and undefined if there isn't a value yet
 
@@ -197,11 +197,11 @@ so use null if you want there to be nothing, and undefined if there isn't a valu
 
 
 in each type there are different values
-    * string: anything between ""
-    * number: anything made up of numbers *.*, Infinity, NaN, with or without -
-    * boolean: true, false
-    * undefined: undefined
-    * null: null 
+* string: anything between ""
+* number: anything made up of numbers *.*, Infinity, NaN, with or without -
+* boolean: true, false
+* undefined: undefined
+* null: null 
 
 [on pytut](http://www.pythontutor.com/live.html#code=/*%0A%20%20%22%22,%20%22%20%22,%20%22%20%20%22,%20%22%20%20%22,%20'',%20'%20'%0A%20%20true,%20false,%20null,%20undefined,%20%0A%20%200,%200.0,%20-0,%20%2B0,%20-0.0,%20%2B0.0%0A%20%201000,%20.001,%201e3,%201e-3,%20%0A%20%20999e305,%20999e306,%20Infinity%0A*/%0Aconst%20a%20%3D%20,%20b%20%3D%20%3B%0Aconst%20expected%20%3D%20%22%22%3B%0A%0Alet%20actual%20%3D%20%22%22%3B%0Aif%20%28typeof%20a%20%3D%3D%3D%20typeof%20b%29%20%7B%0A%20%20actual%20%2B%3D%20%22same%20type,%20%22%3B%0A%20%20if%20%28a%20%3D%3D%3D%20b%29%20%7B%0A%20%20%20%20actual%20%2B%3D%20%22same%20value%22%3B%0A%20%20%7D%20else%20%7B%0A%20%20%20%20actual%20%2B%3D%20%22different%20values%22%3B%0A%20%20%7D%0A%7D%20else%20%7B%0A%20%20actual%20%3D%20%22different%20types%22%3B%0A%7D%0A%0Aconsole.assert%28expected%20%3D%3D%3D%20actual,%20%22actual%20%3D%3D%3D%20%22%20%2B%20actual%29%3B&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)
 ```js
@@ -254,6 +254,7 @@ JS allows you to convert between types
 ### Boolean
 
 [on pytut](http://www.pythontutor.com/live.html#code=/*%20%20values%20to%20try%0A%20%20%22%22,%20%22%20%22,%20true,%20false,%20undefined,%20null,%200,%201,%20-1,%20NaN,%20Infinity%0A*/%0Aconst%20a%20%3D%20,%20b%20%3D%20%3B%0Aconst%20a_coerced%20%3D%20Boolean%28a%29%3B%0Aconst%20b_coerced%20%3D%20Boolean%28b%29%3B%0Aconst%20expected%20%3D%20%22%22%3B%0A%0Alet%20actual%20%3D%20%22%22%3B%0Aif%20%28a_coerced%20%3D%3D%3D%20b_coerced%29%20%7B%0A%20%20actual%20%3D%20%22coerce%20to%20same%20boolean%22%3B%0A%7D%20else%20%7B%0A%20%20actual%20%3D%20%22coerce%20to%20different%20booleans%22%3B%0A%7D%0A%0Aconsole.assert%28expected%20%3D%3D%3D%20actual,%20%22actual%20%3D%3D%3D%20%22%20%2B%20actual%29%3B&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)
+```js
 { // coercing to boolean
   /*  values to try
     "", " ", true, false, undefined, null, 0, 1, -1, NaN, Infinity
@@ -277,6 +278,7 @@ JS allows you to convert between types
 ### String
 
 [on pytut](http://www.pythontutor.com/live.html#code=/*%0A%20%20%22%22,%20%22%20%22,%20true,%20false,%20undefined,%20null,%200,%201,%20-1,%20NaN,%20Infinity%0A*/%0Aconst%20a%20%3D%20,%20b%20%3D%20%3B%0Aconst%20a_coerced%20%3D%20String%28a%29%3B%0Aconst%20b_coerced%20%3D%20String%28b%29%3B%0Aconst%20expected%20%3D%20%22%22%3B%0A%0Alet%20actual%20%3D%20%22%22%3B%0Aif%20%28a_coerced%20%3D%3D%3D%20b_coerced%29%20%7B%0A%20%20actual%20%3D%20%22coerce%20to%20same%20string%22%3B%0A%7D%20else%20%7B%0A%20%20actual%20%3D%20%22coerce%20to%20different%20strings%22%3B%0A%7D%0A%0Aconsole.assert%28expected%20%3D%3D%3D%20actual,%20%22actual%20%3D%3D%3D%20%22%20%2B%20actual%29%3B%0A&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)
+```js
 { // coercing to string
   /*
     "", " ", true, false, undefined, null, 0, 1, -1, NaN, Infinity
@@ -295,6 +297,7 @@ JS allows you to convert between types
 
   console.assert(expected === actual, "actual === " + actual);
 }
+```
 
 ### Number
 
@@ -326,6 +329,7 @@ JS allows you to convert between types
 ### Undefined
 
 [on pytut](http://www.pythontutor.com/live.html#code=/*%20values%20to%20try%0A%20%20try%20everything,%20this%20one's%20not%20to%20complex%0A*/%0Aconst%20a%20%3D%20,%20b%20%3D%20%3B%0Aconst%20a_coerced%20%3D%20void%20a%3B%0Aconst%20b_coerced%20%3D%20void%20b%3B%0Aconst%20expected%20%3D%20%22%22%3B%0A%0Alet%20actual%20%3D%20%22%22%3B%0Aif%20%28a_coerced%20%3D%3D%3D%20b_coerced%29%20%7B%0A%20%20actual%20%3D%20%22coerce%20to%20same%20undefined%22%3B%0A%7D%20else%20%7B%0A%20%20actual%20%3D%20%22coerce%20to%20different%20undefineds%22%3B%0A%7D%0A%0Aconsole.assert%28expected%20%3D%3D%3D%20actual,%20%22actual%20%3D%3D%3D%20%22%20%2B%20actual%29%3B&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)
+```js
 { // coercing to undefined
   /* values to try
     try everything, this one's not to complex
@@ -344,6 +348,7 @@ JS allows you to convert between types
 
   console.assert(expected === actual, "actual === " + actual);
 }
+```
 
 [TOP](#primitive-types)
 
