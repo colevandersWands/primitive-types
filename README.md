@@ -10,7 +10,7 @@ Primitives are the types that _are_ values, as opposed to reference types that _
 * [=== & !==](#equal-and-not-equal)
 * [NaN](#nan)
 * [null vs. undefined](#null-vs-undefined)
-* coercing to
+* [coercing to](#coercing-to)
     * [boolean](#boolean)
     * [string](#string)
     * [number](#number)
@@ -374,6 +374,10 @@ JS allows you to convert between types
     path = "coerce to different booleans";
   }
 
+  console.log("a: "+typeof a+", "+a);
+  console.log("b: "+typeof b+", "+b);
+  console.log("a_coerced: "+typeof a_coerced+", "+a_coerced);
+  console.log("b_coerced: "+typeof b_coerced+", "+b_coerced);
   console.assert(expected === path, "path === " + path);
 }
 ```
@@ -398,13 +402,17 @@ JS allows you to convert between types
     path = "coerce to different strings";
   }
 
+  console.log("a: "+typeof a+", "+a);
+  console.log("b: "+typeof b+", "+b);
+  console.log("a_coerced: "+typeof a_coerced+", "+a_coerced);
+  console.log("b_coerced: "+typeof b_coerced+", "+b_coerced);
   console.assert(expected === path, "path === " + path);
 }
 ```
 
 ### Number
 
-[on pytut](http://www.pythontutor.com/live.html#code=/*%0A%20%20'1',%20%221.0%22,%20%220%22,%20'0.0',%20'Infinity',%20'NaN',%20'1e3'%0A%20%20'one',%20'two',%20'words',%20'-%3C%28%3D%29%3E-'%0A%20%20true,%20false%0A%20%20undefined,%20null%0A*/%0Aconst%20a%20%3D%20,%20b%20%3D%20%3B%0Aconst%20a_coerced%20%3D%20Number%28a%29%3B%0Aconst%20b_coerced%20%3D%20Number%28b%29%3B%0Aconst%20expected%20%3D%20%22%22%3B%0A%0Alet%20path%20%3D%20%22%22%3B%0Aif%20%28a_coerced%20%3D%3D%3D%20b_coerced%29%20%7B%0A%20%20path%20%3D%20%22coerce%20to%20same%20number%22%3B%0A%7D%20else%20%7B%0A%20%20path%20%3D%20%22coerce%20to%20different%20numbers%22%3B%0A%7D%0A%0Aconsole.assert%28expected%20%3D%3D%3D%20path,%20%22path%20%3D%3D%3D%20%22%20%2B%20path%29%3B&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)
+[on pytut](http://www.pythontutor.com/live.html#code=/*%0A%20%20'1',%20%221.0%22,%20%220%22,%20'0.0',%20'Infinity',%20'NaN',%20'1e3'%0A%20%20'one',%20'two',%20'words',%20'-%3C%28%3D%29%3E-'%0A%20%20true,%20false%0A%20%20undefined,%20null%0A%20%201,%201.0,%200,%200.0,%20-0,%20%2B0,%20Infinity,%20NaN,%201e3,%201000%0A*/%0Aconst%20a%20%3D%20,%20b%20%3D%20%3B%0Aconst%20a_coerced%20%3D%20Number%28a%29%3B%0Aconst%20b_coerced%20%3D%20Number%28b%29%3B%0Aconst%20expected%20%3D%20%22%22%3B%0A%0Alet%20path%20%3D%20%22%22%3B%0Aif%20%28a_coerced%20%3D%3D%3D%20b_coerced%29%20%7B%0A%20%20path%20%3D%20%22coerce%20to%20same%20number%22%3B%0A%7D%20else%20if%20%28%20%28a_coerced%20!%3D%3D%20a_coerced%29%20%26%26%20%28b_coerced%20!%3D%3D%20b_coerced%29%20%29%20%7B%0A%20%20path%20%3D%20%22both%20coerce%20to%20NaN%22%0A%7D%20else%20%7B%0A%20%20path%20%3D%20%22coerce%20to%20different%20numbers%22%3B%0A%7D%0A%0Aconsole.log%28%22a%3A%20%22%2Btypeof%20a%2B%22,%20%22%2Ba%29%3B%0Aconsole.log%28%22b%3A%20%22%2Btypeof%20b%2B%22,%20%22%2Bb%29%3B%0Aconsole.log%28%22a_coerced%3A%20%22%2Btypeof%20a_coerced%2B%22,%20%22%2Ba_coerced%29%3B%0Aconsole.log%28%22b_coerced%3A%20%22%2Btypeof%20b_coerced%2B%22,%20%22%2Bb_coerced%29%3B%0Aconsole.assert%28expected%20%3D%3D%3D%20path,%20%22path%20%3D%3D%3D%20%22%20%2B%20path%29%3B&cumulative=false&curInstr=27&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)
 ```js
 { // coercing to number
   /*
@@ -412,6 +420,7 @@ JS allows you to convert between types
     'one', 'two', 'words', '-<(=)>-'
     true, false
     undefined, null
+    1, 1.0, 0, 0.0, -0, +0, Infinity, NaN, 1e3, 1000
   */
   const a = , b = ;
   const a_coerced = Number(a);
@@ -421,10 +430,16 @@ JS allows you to convert between types
   let path = "";
   if (a_coerced === b_coerced) {
     path = "coerce to same number";
+  } else if ( (a_coerced !== a_coerced) && (b_coerced !== b_coerced) ) {
+    path = "both coerce to NaN"
   } else {
     path = "coerce to different numbers";
   }
 
+  console.log("a: "+typeof a+", "+a);
+  console.log("b: "+typeof b+", "+b);
+  console.log("a_coerced: "+typeof a_coerced+", "+a_coerced);
+  console.log("b_coerced: "+typeof b_coerced+", "+b_coerced);
   console.assert(expected === path, "path === " + path);
 }
 ```
@@ -435,7 +450,7 @@ JS allows you to convert between types
 ```js
 { // coercing to undefined
   /* values to try
-    try everything, this one's not to complex
+    try everything, this one's not to complicated
   */
   const a = , b = ;
   const a_coerced = void a;
@@ -449,6 +464,10 @@ JS allows you to convert between types
     path = "coerce to different undefineds";
   }
 
+  console.log("a: "+typeof a+", "+a);
+  console.log("b: "+typeof b+", "+b);
+  console.log("a_coerced: "+typeof a_coerced+", "+a_coerced);
+  console.log("b_coerced: "+typeof b_coerced+", "+b_coerced);
   console.assert(expected === path, "path === " + path);
 }
 ```
@@ -466,7 +485,7 @@ JS allows you to convert between types
                   null, NaN, Infinity, 0, 1, -1, 
                   .5, -0.0, 1e3, 1e-3, 999e305, 999e306,
                   {}, [], function(){}, ()=>{}, new Number(),
-                  "add more values and guess where they fit!"
+                  "add values here and guess where they'll fit!"
                 ];
   const sorted = {
       string: [],
