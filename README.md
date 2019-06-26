@@ -83,11 +83,13 @@ Within each type there are different values
 ```js
 {
   /*
-    "", " ", "  ", "  ", '', ' '
+    "", " ", "  ", `  `, '', ' '
     true, false, null, undefined, 
     0, 0.0, -0, +0, -0.0, +0.0
     1000, .001, 1e3, 1e-3, 
     999e305, 999e306, Infinity
+    "3", 3, "true", true,
+    NaN, "NaN", 1, 3/3
   */
   const a = , b = ;
   const expected = "";
