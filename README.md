@@ -60,7 +60,7 @@ the typeof operator tells what type a thing is
     path = typeof a + ": is not a primitive";
   };
 
-  console.log("a: "+typeof a+", "+a);
+  console.log("a: "+typeof a+", ", a);
   console.assert(expected === path, "typeof a === " + path);
 }
 ```
