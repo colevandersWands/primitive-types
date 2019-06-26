@@ -43,7 +43,7 @@ the typeof operator tells what type a thing is
     {}, [], function(){}, ()=>{}, new Number()
   */
   const a = ;
-  const expected_type = '';
+  const expected = '';
 
   let path = "";
   if (typeof a === 'string') {
