@@ -73,8 +73,8 @@ the typeof operator tells what type a thing is
 
 
 Within each type there are different values
-* string: anything between ""
-* number: anything made up of numbers (num, num.num), Infinity, NaN, with or without ```-/+```, [scientific notation](http://www.java2s.com/Tutorials/Javascript/Javascript_Tutorial/Data_Type/How_to_write_Scientific_notation_literal_in_Javascript.htm)
+* string: anything between `""`
+* number: anything made up of numbers `num`, `num.num`, `Infinity`, `NaN`, with or without ```-/+```, or [scientific notation](http://www.java2s.com/Tutorials/Javascript/Javascript_Tutorial/Data_Type/How_to_write_Scientific_notation_literal_in_Javascript.htm)
 * boolean: true, false
 * undefined: undefined
 * null: null 
