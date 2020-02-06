@@ -11,7 +11,7 @@ This repository covers the basic functions for intentionally converting primitiv
 * [to boolean](#to-boolean)
 * [to string](#to-string)
 * [to number](#to-number)
-* [to undefined](#to-undefined)
+<!-- * [to undefined](#to-undefined) -->
 * (there's no way to convert to ```null```)
 * [resources](#resources)
 
@@ -121,7 +121,7 @@ This repository covers the basic functions for intentionally converting primitiv
 [TOP](#explicit-coercion)
 
 ---
-
+<!--
 ## To Undefined
 
 [on pytut](http://www.pythontutor.com/live.html#code=/*%20values%20to%20try%0A%20%20try%20everything,%20this%20one's%20not%20to%20complex%0A*/%0Aconst%20a%20%3D%20,%20b%20%3D%20%3B%0Aconst%20a_coerced%20%3D%20void%20a%3B%0Aconst%20b_coerced%20%3D%20void%20b%3B%0Aconst%20expected%20%3D%20%22%22%3B%0A%0Alet%20path%20%3D%20%22%22%3B%0Aif%20%28a_coerced%20%3D%3D%3D%20b_coerced%29%20%7B%0A%20%20path%20%3D%20%22coerce%20to%20same%20undefined%22%3B%0A%7D%20else%20%7B%0A%20%20path%20%3D%20%22coerce%20to%20different%20undefineds%22%3B%0A%7D%0A%0Aconsole.assert%28expected%20%3D%3D%3D%20path,%20%22path%20%3D%3D%3D%20%22%20%2B%20path%29%3B&cumulative=false&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)
@@ -154,6 +154,7 @@ This repository covers the basic functions for intentionally converting primitiv
 [TOP](#explicit-coercion)
 
 ---
+-->
 
 ## Resources
 
